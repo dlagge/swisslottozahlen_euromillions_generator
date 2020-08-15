@@ -1,0 +1,186 @@
+body {
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(26,44,63,1) 0%, rgba(25,121,169,1) 100%);
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1, p, button, label, .ziehungen, input {
+    font-family: "Arial Black";
+}
+
+td, input, h1 {
+    text-align: center;
+}
+
+.ziehungen {
+    cursor: pointer;
+}
+
+label, h1, a {
+    color: white;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+.footer {
+    padding: 5px;
+    background-color: #1a2c3f;
+    color: white;
+    text-align: center;
+}
+
+.plate {
+    background: #1979a9;
+    padding: 20px;
+    margin-bottom: 50px;
+    -webkit-box-shadow: 5px 5px 9px -1px #1a2c3f;
+    box-shadow: 5px 5px 9px -1px #1a2c3f;
+}
+
+#wrapper1 {
+    display: grid;
+    grid-template-columns:repeat(7, 1fr);
+
+}
+
+#zahl1 {
+    grid-column: 1;
+}
+
+#zahl2 {
+    grid-column: 2;
+}
+
+#zahl3 {
+    grid-column: 3;
+}
+
+#zahl4 {
+    grid-column: 4;
+}
+
+#zahl5 {
+    grid-column: 5;
+}
+
+#zahl6 {
+    grid-column: 6;
+}
+
+#zahl7 {
+    margin-left: 10px;
+    grid-column: 7;
+}
+
+#box7 {
+    background: yellow;
+}
+
+.zahl {
+    grid-row:2;
+}
+
+.box {
+    font-size: 60px;
+    text-align: center;
+    background: white;
+    color: #1979a9;
+}
+
+#tab {
+    color: #1a2c3f;
+}
+
+#autoscroll {
+    overflow: auto;
+}
+
+.ziehungen {
+    background: #DB5353;
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#glueck_mi {
+    margin-top: 20px;
+}
+
+/* ------------------ buttons ------------------ */
+#the_big_button {
+    background: white;
+    border: #DB5353 solid 20px;
+    padding: 30px;
+    font-size: 35px;
+    color: #DB5353;
+    border-radius: 25px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+#the_big_button:hover {
+    transform: scale(1.05);
+}
+
+#eintragen_mi, #eintragen_sa {
+    background: white;
+    border: #DB5353 solid 10px;
+    padding: 10px;
+    font-size: 14px;
+    color: #DB5353;
+    border-radius: 14px;
+    display: block;
+    margin: 40px auto;
+}
+
+#eintragen_mi:hover, #eintragen_sa:hover {
+    transform: scale(1.05);
+}
+
+#Glueckszahl {
+    margin-left: 20px;
+    margin-right: 20px;
+    background: yellow;
+
+}
+
+.Lottozahl, #datepicker {
+    border-width: 0;
+    color: #1979a9;
+    max-width: 150px;
+    margin-top: 20px;
+}
+
+#datepicker {
+    margin-top: 20px;
+}
+
+#random_sel {
+    margin-bottom: 20px;
+}
+
+/* ------------------ @media ------------------ */
+
+@media (max-width: 800px) {
+    #the_big_button {
+        transform: scale(0.6);
+    }
+    #the_big_button:hover {
+        transform: scale(0.61);
+    }
+    .box {
+        font-size: 35px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+}
