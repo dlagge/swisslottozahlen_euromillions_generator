@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Swisslottozahlen Generator</title>
+    <title>Lottozahlengenerator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="random_generator.js"></script>
     <script type="text/javascript" src="d3.min.js"></script>
 </head>
 <body>
-<h1>Swisslottozahlen Generator</h1>
-<button id="mi_sa_button" onclick="mi_sa_button();">Mittwoch und Samstag ausgewählt</button>
+<h1>Lottozahlengenerator</h1>
+<div id="swiss_euro_settings">
+    <div id="swiss_euro_buttons">
+        <input type="image" id="swiss" src="swisslotto_button.png" onclick="show_swisslotto();" />
+        <input type="image" id="euromill" src="euromillions_button.png" onclick="show_euromillions();"/>
+    </div>
+    <div id="swiss_settings">
+        <form>
+            <h2>Swisslotto</h2>
+             <fieldset>
+                <input name="swiss_radio" onclick="display();" type="radio" checked><label>Mittwoch und Samstag anzeigen</label><br>
+                <input name="swiss_radio" onclick="display();" type="radio"><label>Mittwoch anzeigen</label><br>
+                <input name="swiss_radio" onclick="display();" type="radio"><label>Samstag anzeigen</label>
+             </fieldset>
+        </form>
+    </div>
+    <div id="euro_settings">
+        <form>
+            <h2>Euromillions</h2>
+            <fieldset>
+                <input name="euro_radio" type="radio" checked><label>Dienstag und Freitag anzeigen</label><br>
+                <input name="euro_radio" type="radio"><label>Dienstag anzeigen</label><br>
+                <input name="euro_radio" type="radio"><label>Freitag anzeigen</label>
+            </fieldset>
+        </form>
+    </div>
+</div>
 <div class="plate" id="plate0">
     <button id="the_big_button" onclick="create_lottonumbers()">Lottozahlen generieren</button>
     <input type="radio" name="numsel" id="all_sel" onchange="select_all_buttons();"><label>Alle Zahlen

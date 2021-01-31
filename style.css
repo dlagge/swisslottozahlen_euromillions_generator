@@ -4,25 +4,17 @@ body {
     margin: auto;
 }
 
-h1, p, button, label, .ziehungen, input {
-    font-family: "Arial Black";
-}
+h1, h2, p, button, label, .ziehungen, input { font-family: "Arial Black";}
 
-td, input, h1 {
-    text-align: center;
-}
+td, input, h1 { text-align: center;}
 
-label, h1, a {
-    color: white;
-}
+label, h1, a, h2 {color: white;}
 
-h1 {
-    font-size: 60px;
-}
+h1 { font-size: 60px;}
 
-*:focus {
-    outline: 0 !important;
-}
+*:focus { outline: 0 !important;}
+
+button { cursor:pointer;}
 
 .footer {
     padding: 5px;
@@ -34,8 +26,7 @@ h1 {
 .plate {
     background: #1979a9;
     padding: 20px;
-    margin: 0 auto;
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
     -webkit-box-shadow: 5px 5px 9px -1px #1a2c3f;
     box-shadow: 5px 5px 9px -1px #1a2c3f;
     max-width: 1000px;
@@ -47,42 +38,40 @@ h1 {
     margin-bottom: -20px;
 }
 
-#zahl1 {
-    grid-column: 1;
+#swiss_euro_settings {
+    margin: 0 auto 20px;
+    max-width: 1000px;
+    padding: 20px;
 }
 
-#zahl2 {
-    grid-column: 2;
+#euro_settings {
+    display:none;
 }
 
-#zahl3 {
-    grid-column: 3;
+fieldset {
+    border-width: 0;
 }
 
-#zahl4 {
-    grid-column: 4;
-}
+#zahl1 { grid-column: 1;}
 
-#zahl5 {
-    grid-column: 5;
-}
+#zahl2 { grid-column: 2;}
 
-#zahl6 {
-    grid-column: 6;
-}
+#zahl3 { grid-column: 3;}
+
+#zahl4 { grid-column: 4;}
+
+#zahl5 { grid-column: 5;}
+
+#zahl6 { grid-column: 6;}
 
 #zahl7 {
     margin-left: 10px;
     grid-column: 7;
 }
 
-#box7 {
-    background: yellow;
-}
+#box7 { background: yellow;}
 
-.zahl {
-    grid-row:2;
-}
+.zahl { grid-row:2;}
 
 .box {
     font-size: 30px;
@@ -91,13 +80,9 @@ h1 {
     color: #1979a9;
 }
 
-#tab {
-    color: #1a2c3f;
-}
+#tab { color: #1a2c3f;}
 
-#autoscroll {
-    overflow: auto;
-}
+#autoscroll { overflow: auto;}
 
 .ziehungen {
     background: #DB5353;
@@ -107,9 +92,7 @@ h1 {
     margin-bottom: 40px;
 }
 
-#glueck_mi {
-    margin-top: 20px;
-}
+#glueck_mi { margin-top: 20px;}
 
 #wrap3, #wrap1 {
     display: grid;
@@ -127,16 +110,15 @@ h1 {
 
 /* ------------------ buttons ------------------ */
 
-#mi_sa_button {
-    background: #1979a9;
-    border: #DB5353 solid 0;
-    padding: 5px;
-    font-size: 20px;
-    color: white;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 20px;
+#swiss_euro_buttons {
+    transform: scale(0.5);
+    transform-origin: left;
 }
+
+#swiss { margin-right: 40px;}
+
+#euromill { margin-top: 20px;}
+
 
 #the_big_button {
     background: white;
@@ -146,11 +128,10 @@ h1 {
     color: #DB5353;
     border-radius: 14px;
     display: block;
-    margin: 0 auto;
-    margin-bottom: 10px;
+    margin: 0 auto 10px;
 }
 
-#the_big_button:hover {
+#the_big_button:hover, #euromill:hover, #swiss:hover {
     transform: scale(1.05);
 }
 
@@ -215,8 +196,7 @@ h1 {
 
     #plate0 {
         max-width: 1000px;
-        margin: 0 auto;
-        margin-bottom: 40px;
+        margin: 0 auto 40px;
     }
 
     #plate1 {

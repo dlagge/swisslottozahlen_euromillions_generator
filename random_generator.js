@@ -3,6 +3,7 @@ let glueckzahl_max = 6;
 let glueckzahl_min = 1;
 let anzahl_lottozahlen = 6;
 let random_arr = [];
+let number_of_swiss_plates = 4;
 
 function create_lottonumbers() {
     let arr = [];
@@ -149,19 +150,33 @@ function deselect_all_buttons() {
     random_arr = [];
 }
 
-function mi_sa_button(){
-    if(document.getElementById("mi_sa_button").innerHTML === "Mittwoch"){
-        document.getElementById("mi_sa_button").innerHTML = "Samstag";
-        document.getElementById("plate1").hidden = true;
-        document.getElementById("plate2").hidden = true;
-        document.getElementById("plate3").hidden = false;
-        document.getElementById("plate4").hidden = false;
-    } else {
-        document.getElementById("mi_sa_button").innerHTML = "Mittwoch";
-        document.getElementById("plate1").hidden = false;
-        document.getElementById("plate2").hidden = false;
-        document.getElementById("plate3").hidden = true;
-        document.getElementById("plate4").hidden = true;
-    }
+function show_swisslotto() {
+    document.getElementById("swiss_settings").style.display = 'block';
+    document.getElementById("euro_settings").style.display = 'none';
 }
 
+function show_euromillions() {
+    document.getElementById("swiss_settings").style.display = 'none';
+    document.getElementById("euro_settings").style.display = 'block';
+}
+
+function display() {
+    var radiosswiss = document.getElementsByName('swiss_radio');
+    if(radiosswiss[0].checked){
+        for(let c=1; c<=number_of_swiss_plates; c++){
+            document.getElementById("plate" + c).style.display = 'block';
+        }
+    }
+    if(radiosswiss[1].checked){
+        document.getElementById("plate1").style.display = 'block';
+        document.getElementById("plate2").style.display = 'block';
+        document.getElementById("plate3").style.display = 'none';
+        document.getElementById("plate4").style.display = 'none';
+    }
+    if(radiosswiss[2].checked){
+        document.getElementById("plate1").style.display = 'none';
+        document.getElementById("plate2").style.display = 'none';
+        document.getElementById("plate3").style.display = 'block';
+        document.getElementById("plate4").style.display = 'block';
+    }
+}

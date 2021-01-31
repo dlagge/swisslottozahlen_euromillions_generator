@@ -1,25 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd725fb8-5e52-4779-a36b-7488cf9370ef" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="bd725fb8-5e52-4779-a36b-7488cf9370ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/euromillions_button.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/swisslotto_button.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/random_generator.js" beforeDir="false" afterPath="$PROJECT_DIR$/random_generator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db_connection.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -31,136 +44,46 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>850</find>
-      <find>width</find>
-      <find>height</find>
-      <find>mi</find>
-      <find>?</find>
-      <find>tab</find>
-      <find>Ziehung</find>
-      <find>id</find>
-      <find>50</find>
-      <find>40</find>
-      <find>padding</find>
-      <find>zieh</find>
-      <find>bottom</find>
-      <find>ziehungen</find>
-      <find>enable_buttons</find>
-      <find>nicht</find>
-      <find>arr[b</find>
-      <find>b</find>
-      <find>arr</find>
-      <find>the_big_button</find>
-      <find>hide</find>
-      <find>pointer</find>
-      <find>innerHTML</find>
-      <find>Lottozahl</find>
-      <find>wrapper</find>
-      <find>create_table</find>
-      <find>create</find>
-      <find>table</find>
-      <find>sa_table</find>
-      <find>sa_ta</find>
-    </findStrings>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Ziehungen_Mittwoch.csv" />
-        <option value="$PROJECT_DIR$/d3.min.js" />
-        <option value="$PROJECT_DIR$/data/Ziehungen_Mittwoch.csv" />
-        <option value="$PROJECT_DIR$/db.php" />
-        <option value="$PROJECT_DIR$/db_lotto.php" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/lottozahlen_algorithmus.js" />
-        <option value="$PROJECT_DIR$/delete_row.php" />
-        <option value="$PROJECT_DIR$/delete_row_mi.php" />
-        <option value="$PROJECT_DIR$/del_row.php" />
-        <option value="$PROJECT_DIR$/tsconfig.json" />
-        <option value="$PROJECT_DIR$/mi_tab.json" />
-        <option value="$PROJECT_DIR$/sa_tab.json" />
-        <option value="$PROJECT_DIR$/sa_glueck.json" />
-        <option value="$PROJECT_DIR$/mi_glueck.json" />
-        <option value="$PROJECT_DIR$/ziehungsh_mi.php" />
-        <option value="$PROJECT_DIR$/ziehungsh_sa.php" />
-        <option value="$PROJECT_DIR$/insert_sa.php" />
-        <option value="$PROJECT_DIR$/insert_mi.php" />
-        <option value="$PROJECT_DIR$/ziehungsstatistik_mi.php" />
-        <option value="$PROJECT_DIR$/ziehungsstatistik_sa.php" />
-        <option value="$PROJECT_DIR$/style.css" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/random_generator.js" />
-        <option value="$PROJECT_DIR$/db_lotto_sa.php" />
-        <option value="$PROJECT_DIR$/db_lotto_mi.php" />
-        <option value="$PROJECT_DIR$/db_connection.php" />
-      </list>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2.1" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1865" />
-    <option name="y" value="-1" />
-    <option name="width" value="943" />
-    <option name="height" value="887" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="lottozahlen_generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lottozahlen_generator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lottozahlen_generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectId" id="1nqDtymkBc0kfHmjmZvcoTL21fN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\MAMP\htdocs\lottozahlen_generator" />
-      <recent name="C:\Users\Dominique\PhpstormProjects\lottozahlen_generator" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\MAMP\htdocs\swisslottozahlen_euromillions_generator" />
       <recent name="C:\MAMP\htdocs\lottozahlen_generator" />
       <recent name="C:\Users\Dominique\PhpstormProjects\lottozahlen_generator" />
       <recent name="C:\Users\Dominique\PhpstormProjects\lottozahlen_generator\lib" />
       <recent name="C:\Users\Dominique\PhpstormProjects\lottozahlen_generator\data" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\MAMP\htdocs\lottozahlen_generator" />
+      <recent name="C:\Users\Dominique\PhpstormProjects\lottozahlen_generator" />
+    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -203,146 +126,35 @@
       <workItem from="1602534959089" duration="11133000" />
       <workItem from="1602584438214" duration="13896000" />
       <workItem from="1605722732892" duration="142000" />
+      <workItem from="1612108947803" duration="10298000" />
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="322056000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-1865" y="-1" width="1873" height="1096" extended-state="6" />
-    <layout>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.12520684" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Database Changes" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.32859176" />
-      <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="PHP-CGI Server" order="12" />
-      <window_info anchor="right" id="Database" order="0" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1249" column="4" selection-start-line="1249" selection-start-column="4" selection-end-line="1249" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/d3/d3.js" />
-    <entry file="file://$PROJECT_DIR$/data/Ziehungen_Samstag.csv" />
-    <entry file="file://$PROJECT_DIR$/lib/d3/d3.min.js" />
-    <entry file="file://$PROJECT_DIR$/index.html" />
-    <entry file="file://$PROJECT_DIR$/data/Ziehungen_Mittwoch.csv" />
-    <entry file="file://$PROJECT_DIR$/delete_row_mi.php" />
-    <entry file="file://$PROJECT_DIR$/del_row.php" />
-    <entry file="file://$PROJECT_DIR$/results.json" />
-    <entry file="file://$PROJECT_DIR$/d3.js" />
-    <entry file="file://$USER_HOME$/PhpstormProjects/ivispropf/src/Ein-Ausgaben_linechart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1278">
-          <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mi_glueck.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mi_tab.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sa_glueck.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sa_tab.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/insert_mi.php" />
-    <entry file="file://$PROJECT_DIR$/insert_sa.php" />
-    <entry file="file://$PROJECT_DIR$/ziehungsstatistik_sa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="199" column="29" selection-start-line="199" selection-start-column="22" selection-end-line="199" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ziehungsstatistik_mi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="76" column="29" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/d3.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_lotto_mi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="79" column="40" lean-forward="true" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_lotto_sa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="109" column="28" selection-start-line="109" selection-start-column="28" selection-end-line="109" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/random_generator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="82" column="38" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1420" y="192" key="SettingsEditor" timestamp="1612124705253">
+      <screen x="-1842" y="7" width="1842" height="1080" />
+    </state>
+    <state x="-1420" y="192" key="SettingsEditor/0.0.1536.821/-1842.7.1842.1080@-1842.7.1842.1080" timestamp="1612124705253" />
+    <state x="-1214" y="235" width="586" height="624" key="find.popup" timestamp="1612119379126">
+      <screen x="-1842" y="7" width="1842" height="1080" />
+    </state>
+    <state x="-1214" y="235" width="586" height="624" key="find.popup/0.0.1536.821/-1842.7.1842.1080@-1842.7.1842.1080" timestamp="1612119379126" />
   </component>
 </project>
