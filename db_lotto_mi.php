@@ -59,18 +59,18 @@ if(isset($_POST['submit_mi'])) {
 }
 
 
-$sql_all = "SELECT * FROM swisslottozahlentabelle WHERE Ziehung = 'Mittwoch' ORDER BY Datum ASC ";
+$sql_all = "SELECT * FROM swisslottozahlentabelle WHERE Ziehung = 'Mittwoch' ORDER BY Datum DESC ";
 $result_mi = mysqli_query($db,$sql_all);
 
-echo "<table>";
+echo "<table id='mi_table'>";
 while($row = mysqli_fetch_array($result_mi, MYSQLI_NUM)){
 	$da = date("d.m.Y", strtotime($row[1]));
-	echo "<tr>";
+	echo "<tr id='$row[0]'>";
 	echo "<form method='post'>";
 	echo "<input type='hidden' name='id' value='$row[0]'>";
 	echo "<td><input type='submit' name='delete' value='x' style='background: #DB5353; border-width: 0; color: white;'></td>";
 	echo "</form>";
-	echo "<td style='width:80px; font-size:14px; font-family:Arial;background: white; color: #1a2c3f;'>". $da ."</td>";
+	echo "<td style='width:80px; font-size:14px; font-family:Arial;background: white; color: #1a2c3f;' onmouseover='shownumbers_mi($row[0]);' onmouseout='mouseoutfunc_mi();'>". $da ."</td>";
 	for($ll=1; $ll <= 42; $ll++){
 		$background = "white";
 		$color = "#1a2c3f";
@@ -93,3 +93,27 @@ echo "</table>";
 
 mysqli_close($db);
 ?>
+<script>
+    function shownumbers_mi(num_id){
+        var table = document.getElementById("mi_table");
+        for (let r of table.rows) {
+            if(Number(r.id) === Number(num_id)){
+                for (let cell of r.cells) {
+                    console.log(cell.style.background);
+                    if (cell.style.backgroundColor === "rgb(25, 121, 169)") {
+                        document.getElementById("mi" + cell.innerHTML).style.backgroundColor = "#DB5353";
+                        document.getElementById("mi" + cell.innerHTML).style.color = "white";
+                    }
+                }
+            }
+
+        }
+    }
+
+    function mouseoutfunc_mi(){
+        for(let c=1; c<=42; c++){
+            document.getElementById("mi" + c).style.backgroundColor = "white";
+            document.getElementById("mi" + c).style.color = "black";
+        }
+    }
+</script>

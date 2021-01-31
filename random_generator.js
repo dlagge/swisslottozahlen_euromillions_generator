@@ -1,6 +1,5 @@
 let lottozahl_max = 42;
 let glueckzahl_max = 6;
-let lottozahl_min = 1;
 let glueckzahl_min = 1;
 let anzahl_lottozahlen = 6;
 let random_arr = [];
@@ -8,46 +7,26 @@ let random_arr = [];
 function create_lottonumbers() {
     let arr = [];
 
-    if(document.getElementById('all_sel').checked) {
-
-        // create random numbers
-        for (let i = 0; i < anzahl_lottozahlen; i++) {
-            arr[i] = Math.floor(Math.random() * lottozahl_max) + lottozahl_min;
+    if (random_arr.length >= 6) {
+        console.log(random_arr.length);
+        // pick numbers of the random_arr array
+        for (let ii = 0; ii < anzahl_lottozahlen; ii++) {
+            const random = Math.floor(Math.random() * random_arr.length);
+            arr[ii] = random_arr[random];
         }
 
         // remove dublicates
         while (remove_dublicates(arr).length < anzahl_lottozahlen) {
-            for (let z = remove_dublicates(arr).length; z < anzahl_lottozahlen; z++) {
-                arr[z] = Math.floor(Math.random() * lottozahl_max) + lottozahl_min;
-            }
-        }
-    } else if(document.getElementById('random_sel').checked) {
-        if(random_arr.length >= 6){
-            // pick numbers of the random_arr array
-            for (let ii = 0; ii < anzahl_lottozahlen; ii++) {
+            for (let zz = remove_dublicates(arr).length; zz < anzahl_lottozahlen; zz++) {
                 const random = Math.floor(Math.random() * random_arr.length);
-                arr[ii] = random_arr[random];
+                arr[zz] = random_arr[random];
             }
-
-            // remove dublicates
-            while (remove_dublicates(arr).length < anzahl_lottozahlen) {
-                for (let zz = remove_dublicates(arr).length; zz < anzahl_lottozahlen; zz++) {
-                    const random = Math.floor(Math.random() * random_arr.length);
-                    arr[zz] = random_arr[random];
-                }
-            }
-
-            // Convert to numbers
-            for(let val=0; val<anzahl_lottozahlen; val++){
-                arr[val] = Number(arr[val]);
-            }
-
-        } else {
-            alert("Nicht genügend Zahlen ausgewählt");
         }
+
+    } else {
+        alert("Nicht genügend Zahlen ausgewählt");
     }
 
-    console.log(arr);
     // sort in numerical order
     arr.sort((a, b) => a - b);
 
@@ -101,54 +80,88 @@ function create_table(arr, glueck_z, tabid) {
     }
 }
 
+function create_detailed_table(id, sa_mi) {
+    var myTableDiv = document.getElementById(id);
+
+    var table = document.createElement('TABLE');
+    var tableBody = document.createElement('TBODY');
+    table.appendChild(tableBody);
+    table.style.marginBottom = '40px';
+    table.style.marginLeft = '40px';
+    cellinnerHTML = 1;
+    for (var i = 0; i < 7; i++) {
+        var tr = document.createElement('TR');
+        tableBody.appendChild(tr);
+        for (var j = 0; j < 6; j++) {
+            var td = document.createElement('TD');
+            node = document.createTextNode(cellinnerHTML);
+            td.id = sa_mi + cellinnerHTML;
+            td.style.backgroundColor = 'white';
+            td.style.padding = '3px';
+            td.style.fontFamily = "Arial";
+            td.style.fontSize = "14px";
+            td.appendChild(node);
+            tr.appendChild(td);
+            cellinnerHTML++;
+        }
+    }
+    myTableDiv.appendChild(table);
+}
 
 function create_buttons() {
-    for(let i=1; i<=lottozahl_max; i++){
+    for (let i = 1; i <= lottozahl_max; i++) {
         let button = document.createElement("button");
         document.getElementById("random_buttons").appendChild(button);
         button.innerText = i;
         button.id = "random_button" + i;
         button.style = "background: white; border-width: 0px; color: #1979a9; margin-right: 5px; margin-top: 5px;";
-        button.onclick = function(){
+        button.onclick = function () {
             let innerText = this.innerText;
-            if(button.style.backgroundColor === "white"){
+            if (button.style.backgroundColor === "white") {
                 button.style.backgroundColor = "#DB5353";
                 button.style.color = "white";
-                random_arr.push(innerText);
+                random_arr.push(Number(innerText));
             } else {
                 button.style.backgroundColor = "white";
                 button.style.color = "#1979a9";
-                random_arr = random_arr.filter(function(item) {
-                    return item !== innerText;
-                })
+                random_arr = random_arr.filter(function (item) {
+                    return item !== Number(innerText);
+                });
+                console.log(random_arr);
             }
         }
     }
 }
 
-function disable_buttons(){
-    for(let id = 1; id <= lottozahl_max; id++){
-        document.getElementById("random_button" + id).disabled = true;
-        document.getElementById("random_button" + id).style.backgroundColor = "lightgrey";
-        document.getElementById("random_button" + id).style.color = "#1979a9";
-        random_arr = [];
+function select_all_buttons() {
+    for (let id = 1; id <= lottozahl_max; id++) {
+        document.getElementById("random_button" + id).style.backgroundColor = "#DB5353";
+        document.getElementById("random_button" + id).style.color = "white";
+        random_arr.push(id);
     }
 }
 
-function enable_buttons(){
-    for(let id = 1; id <= lottozahl_max; id++){
-        document.getElementById("random_button" + id).disabled = false;
+function deselect_all_buttons() {
+    for (let id = 1; id <= lottozahl_max; id++) {
         document.getElementById("random_button" + id).style.backgroundColor = "white";
         document.getElementById("random_button" + id).style.color = "#1979a9";
-        random_arr = [];
     }
+    random_arr = [];
 }
 
-function hide($id){
-    if(document.getElementById($id).hidden === true){
-        document.getElementById($id).hidden = false;
+function mi_sa_button(){
+    if(document.getElementById("mi_sa_button").innerHTML === "Mittwoch"){
+        document.getElementById("mi_sa_button").innerHTML = "Samstag";
+        document.getElementById("plate1").hidden = true;
+        document.getElementById("plate2").hidden = true;
+        document.getElementById("plate3").hidden = false;
+        document.getElementById("plate4").hidden = false;
     } else {
-        document.getElementById($id).hidden = true;
+        document.getElementById("mi_sa_button").innerHTML = "Mittwoch";
+        document.getElementById("plate1").hidden = false;
+        document.getElementById("plate2").hidden = false;
+        document.getElementById("plate3").hidden = true;
+        document.getElementById("plate4").hidden = true;
     }
 }
 
