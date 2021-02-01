@@ -1,15 +1,15 @@
-let lottozahl_max = 42;
-let glueckzahl_max = 6;
+let lottozahl_max_swiss = 42;
+let lottozahl_max_euro = 50;
 let glueckzahl_min = 1;
 let anzahl_lottozahlen = 6;
 let random_arr = [];
 let number_of_swiss_plates = 4;
 
-function create_lottonumbers() {
+function create_lottonumbers(glueckzahl_max, lottozahl_max) {
     let arr = [];
 
-    if (random_arr.length >= 6) {
-        console.log(random_arr.length);
+    if (random_arr.length >= anzahl_lottozahlen) {
+
         // pick numbers of the random_arr array
         for (let ii = 0; ii < anzahl_lottozahlen; ii++) {
             const random = Math.floor(Math.random() * random_arr.length);
@@ -31,18 +31,30 @@ function create_lottonumbers() {
     // sort in numerical order
     arr.sort((a, b) => a - b);
 
-
     // fill <p>-Tags
     for (let b = 0; b < anzahl_lottozahlen; b++) {
         let id = b + 1;
         document.getElementById("box" + id).innerHTML = arr[b].toString();
     }
 
-    // Glückszahl
-    let glueck_z = Math.floor(Math.random() * glueckzahl_max) + glueckzahl_min;
-    document.getElementById("box7").innerHTML = glueck_z;
+    // Glückszahlen
+    let glueck_z1 = Math.floor(Math.random() * glueckzahl_max) + glueckzahl_min;
+    document.getElementById("box7").innerHTML = glueck_z1;
 
-    create_table(arr, glueck_z, "tab");
+    let glueck_z2 = 0;
+
+    if(lottozahl_max === lottozahl_max_euro){
+        glueck_z2 = Math.floor(Math.random() * glueckzahl_max) + glueckzahl_min;
+
+        // remove dublicates
+        while(glueck_z1 === glueck_z2){
+            glueck_z2 = Math.floor(Math.random() * glueckzahl_max) + glueckzahl_min;
+        }
+        document.getElementById("box8").innerHTML = glueck_z2;
+    }
+
+
+    create_table(arr, glueck_z1, glueck_z2, "tab", lottozahl_max);
 }
 
 function remove_dublicates(arr) {
@@ -56,7 +68,7 @@ function remove_dublicates(arr) {
     return arr;
 }
 
-function create_table(arr, glueck_z, tabid) {
+function create_table(arr, glueck_z1, glueck_z2, tabid, lottozahl_max) {
     let table = document.getElementById(tabid);
     let row = table.insertRow(0);
     for (let cel = 0; cel < lottozahl_max; cel++) {
@@ -67,11 +79,16 @@ function create_table(arr, glueck_z, tabid) {
         cell.style.fontFamily = "Arial";
         cell.style.fontSize = "14px";
         cell.style.backgroundColor = "white";
-        if (cel_plus1 === glueck_z) {
-            cell.style.color = "#DB5353";
-            cell.style.fontWeight = "bold";
-        } else {
-            cell.style.color = "#1a2c3f";
+        cell.style.color = "#1a2c3f";
+        switch(cel_plus1){
+            case glueck_z1:
+                cell.style.color = "#DB5353";
+                cell.style.fontWeight = "bold";
+                break;
+            case glueck_z2:
+                cell.style.color = "#DB5353";
+                cell.style.fontWeight = "bold";
+                break;
         }
         for (let i = 0; i < arr.length; i++) {
             if (cel_plus1 === arr[i]) {
@@ -109,7 +126,15 @@ function create_detailed_table(id, sa_mi) {
     myTableDiv.appendChild(table);
 }
 
-function create_buttons() {
+function create_buttons(lottozahl_max) {
+
+    // remove the previous buttons
+    let list = document.getElementById("random_buttons");
+    while(list.firstChild){
+        list.removeChild(list.firstChild);
+    }
+
+    // add the buttons
     for (let i = 1; i <= lottozahl_max; i++) {
         let button = document.createElement("button");
         document.getElementById("random_buttons").appendChild(button);
@@ -128,13 +153,12 @@ function create_buttons() {
                 random_arr = random_arr.filter(function (item) {
                     return item !== Number(innerText);
                 });
-                console.log(random_arr);
             }
         }
     }
 }
 
-function select_all_buttons() {
+function select_all_buttons(lottozahl_max) {
     for (let id = 1; id <= lottozahl_max; id++) {
         document.getElementById("random_button" + id).style.backgroundColor = "#DB5353";
         document.getElementById("random_button" + id).style.color = "white";
@@ -142,7 +166,7 @@ function select_all_buttons() {
     }
 }
 
-function deselect_all_buttons() {
+function deselect_all_buttons(lottozahl_max) {
     for (let id = 1; id <= lottozahl_max; id++) {
         document.getElementById("random_button" + id).style.backgroundColor = "white";
         document.getElementById("random_button" + id).style.color = "#1979a9";
@@ -150,33 +174,59 @@ function deselect_all_buttons() {
     random_arr = [];
 }
 
+window.onload = function() {
+    document.getElementById('swiss').click();
+}
+
 function show_swisslotto() {
     document.getElementById("swiss_settings").style.display = 'block';
     document.getElementById("euro_settings").style.display = 'none';
+    document.getElementById("zahl8").style.display = 'none';
+    document.getElementById("the_big_button_euro").style.display = 'none';
+    document.getElementById("the_big_button_swiss").style.display = 'block';
+    document.getElementById("swiss_selector").style.display = 'block';
+    document.getElementById("euro_selector").style.display = 'none';
+    create_buttons(lottozahl_max_swiss);
+    random_arr = [];
+
 }
 
 function show_euromillions() {
     document.getElementById("swiss_settings").style.display = 'none';
     document.getElementById("euro_settings").style.display = 'block';
+    document.getElementById("zahl8").style.display = 'block';
+    document.getElementById("the_big_button_euro").style.display = 'block';
+    document.getElementById("the_big_button_swiss").style.display = 'none';
+    document.getElementById("swiss_selector").style.display = 'none';
+    document.getElementById("euro_selector").style.display = 'block';
+    create_buttons(lottozahl_max_euro);
+    random_arr = [];
 }
 
 function display() {
-    var radiosswiss = document.getElementsByName('swiss_radio');
-    if(radiosswiss[0].checked){
+    var radioswiss = document.getElementsByName('swiss_radio');
+    var radioeuro = document.getElementsByName('euro_radio');
+
+    if(radioswiss[0].checked){
         for(let c=1; c<=number_of_swiss_plates; c++){
             document.getElementById("plate" + c).style.display = 'block';
         }
     }
-    if(radiosswiss[1].checked){
+    if(radioswiss[1].checked){
         document.getElementById("plate1").style.display = 'block';
         document.getElementById("plate2").style.display = 'block';
         document.getElementById("plate3").style.display = 'none';
         document.getElementById("plate4").style.display = 'none';
     }
-    if(radiosswiss[2].checked){
+    if(radioswiss[2].checked){
         document.getElementById("plate1").style.display = 'none';
         document.getElementById("plate2").style.display = 'none';
         document.getElementById("plate3").style.display = 'block';
         document.getElementById("plate4").style.display = 'block';
     }
+
+    if(radioeuro[0].checked){
+        //TODO
+    }
+
 }

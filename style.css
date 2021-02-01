@@ -34,7 +34,7 @@ button { cursor:pointer;}
 
 #wrapper1 {
     display: grid;
-    grid-template-columns:repeat(7, 1fr);
+    grid-template-columns:repeat(8, 1fr);
     margin-bottom: -20px;
 }
 
@@ -44,13 +44,7 @@ button { cursor:pointer;}
     padding: 20px;
 }
 
-#euro_settings {
-    display:none;
-}
-
-fieldset {
-    border-width: 0;
-}
+fieldset { border-width: 0;}
 
 #zahl1 { grid-column: 1;}
 
@@ -69,7 +63,12 @@ fieldset {
     grid-column: 7;
 }
 
-#box7 { background: yellow;}
+#zahl8 {
+    grid-column: 8;
+    display: none;
+}
+
+#box7, #box8 { background: yellow;}
 
 .zahl { grid-row:2;}
 
@@ -119,8 +118,7 @@ fieldset {
 
 #euromill { margin-top: 20px;}
 
-
-#the_big_button {
+#the_big_button_swiss, #the_big_button_euro {
     background: white;
     border: #DB5353 solid 10px;
     padding: 5px;
@@ -131,7 +129,7 @@ fieldset {
     margin: 0 auto 10px;
 }
 
-#the_big_button:hover, #euromill:hover, #swiss:hover {
+#the_big_button_swiss:hover, #the_big_button_euro:hover, #euromill:hover, #swiss:hover {
     transform: scale(1.05);
 }
 
@@ -173,10 +171,11 @@ fieldset {
 /* ------------------ @media ------------------ */
 
 @media (max-width: 800px) {
-    #the_big_button {
+    #the_big_button_swiss, #the_big_button_euro {
         transform: scale(0.6);
     }
-    #the_big_button:hover {
+
+    #the_big_button_swiss:hover, #the_big_button_euro:hover {
         transform: scale(0.61);
     }
     .box {

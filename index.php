@@ -35,14 +35,18 @@
     </div>
 </div>
 <div class="plate" id="plate0">
-    <button id="the_big_button" onclick="create_lottonumbers()">Lottozahlen generieren</button>
-    <input type="radio" name="numsel" id="all_sel" onchange="select_all_buttons();"><label>Alle Zahlen
-        selektieren</label><br>
-    <input type="radio" name="numsel" id="random_sel" onchange="deselect_all_buttons();" checked><label>Alle Zahlen
-        deselektieren</label>
-    <div id="random_buttons">
-        <script>create_buttons();</script>
+    <button id="the_big_button_swiss" onclick="create_lottonumbers(6, 42);">Lottozahlen generieren</button>
+    <button id="the_big_button_euro" onclick="create_lottonumbers(12, 50);">Lottozahlen generieren</button>
+    <div id="swiss_selector">
+        <input type="radio" name="numsel_swiss" onchange="select_all_buttons(42);"><label>Alle Zahlen selektieren</label><br>
+        <input type="radio" name="numsel_swiss" onchange="deselect_all_buttons(42);" checked><label>Alle Zahlen deselektieren</label>
     </div>
+    <div id="euro_selector">
+        <input type="radio" name="numsel_euro" onchange="select_all_buttons(50);"><label>Alle Zahlen selektieren</label><br>
+        <input type="radio" name="numsel_euro" onchange="deselect_all_buttons(50);" checked><label>Alle Zahlen deselektieren</label>
+    </div>
+
+    <div id="random_buttons"></div>
     <div id="wrapper1">
         <div class="zahl" id="zahl1"><p class="box" id="box1">-</p></div>
         <div class="zahl" id="zahl2"><p class="box" id="box2">-</p></div>
@@ -51,6 +55,7 @@
         <div class="zahl" id="zahl5"><p class="box" id="box5">-</p></div>
         <div class="zahl" id="zahl6"><p class="box" id="box6">-</p></div>
         <div class="zahl" id="zahl7"><p class="box" id="box7">-</p></div>
+        <div class="zahl" id="zahl8"><p class="box" id="box8">-</p></div>
     </div>
     <div id="autoscroll">
         <table id="tab"></table>
