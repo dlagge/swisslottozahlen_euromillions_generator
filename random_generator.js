@@ -3,7 +3,7 @@ let lottozahl_max_euro = 50;
 let glueckzahl_min = 1;
 let anzahl_lottozahlen = 6;
 let random_arr = [];
-let number_of_swiss_plates = 4;
+let number_of_plates = 8;
 
 function create_lottonumbers(glueckzahl_max, lottozahl_max) {
     let arr = [];
@@ -53,7 +53,6 @@ function create_lottonumbers(glueckzahl_max, lottozahl_max) {
         document.getElementById("box8").innerHTML = glueck_z2;
     }
 
-
     create_table(arr, glueck_z1, glueck_z2, "tab", lottozahl_max);
 }
 
@@ -98,22 +97,21 @@ function create_table(arr, glueck_z1, glueck_z2, tabid, lottozahl_max) {
     }
 }
 
-function create_detailed_table(id, sa_mi) {
-    var myTableDiv = document.getElementById(id);
-
-    var table = document.createElement('TABLE');
-    var tableBody = document.createElement('TBODY');
+function create_detailed_table(id, sa_mi_di_fr, a_reihen, a_spalten) {
+    let myTableDiv = document.getElementById(id);
+    let table = document.createElement('TABLE');
+    let tableBody = document.createElement('TBODY');
     table.appendChild(tableBody);
     table.style.marginBottom = '40px';
     table.style.marginLeft = '40px';
-    cellinnerHTML = 1;
-    for (var i = 0; i < 7; i++) {
-        var tr = document.createElement('TR');
+    let cellinnerHTML = 1;
+    for (let i = 0; i < a_spalten; i++) {
+        let tr = document.createElement('TR');
         tableBody.appendChild(tr);
-        for (var j = 0; j < 6; j++) {
-            var td = document.createElement('TD');
+        for (let j = 0; j < a_reihen; j++) {
+            let td = document.createElement('TD');
             node = document.createTextNode(cellinnerHTML);
-            td.id = sa_mi + cellinnerHTML;
+            td.id = sa_mi_di_fr + cellinnerHTML;
             td.style.backgroundColor = 'white';
             td.style.padding = '3px';
             td.style.fontFamily = "Arial";
@@ -174,11 +172,10 @@ function deselect_all_buttons(lottozahl_max) {
     random_arr = [];
 }
 
-window.onload = function() {
-    document.getElementById('swiss').click();
-}
-
 function show_swisslotto() {
+    document.getElementsByName('swiss_euro_radio')[0].click();
+    document.getElementsByName('numsel_swiss')[0].click();
+    document.getElementById("plate0").style.display = 'block';
     document.getElementById("swiss_settings").style.display = 'block';
     document.getElementById("euro_settings").style.display = 'none';
     document.getElementById("zahl8").style.display = 'none';
@@ -186,12 +183,16 @@ function show_swisslotto() {
     document.getElementById("the_big_button_swiss").style.display = 'block';
     document.getElementById("swiss_selector").style.display = 'block';
     document.getElementById("euro_selector").style.display = 'none';
-    create_buttons(lottozahl_max_swiss);
     random_arr = [];
+    create_buttons(lottozahl_max_swiss);
+    select_all_buttons(42);
 
 }
 
 function show_euromillions() {
+    document.getElementsByName('swiss_euro_radio')[3].click();
+    document.getElementsByName('numsel_euro')[0].click();
+    document.getElementById("plate0").style.display = 'block';
     document.getElementById("swiss_settings").style.display = 'none';
     document.getElementById("euro_settings").style.display = 'block';
     document.getElementById("zahl8").style.display = 'block';
@@ -199,34 +200,66 @@ function show_euromillions() {
     document.getElementById("the_big_button_swiss").style.display = 'none';
     document.getElementById("swiss_selector").style.display = 'none';
     document.getElementById("euro_selector").style.display = 'block';
-    create_buttons(lottozahl_max_euro);
     random_arr = [];
+    create_buttons(lottozahl_max_euro);
+    select_all_buttons(50);
 }
 
 function display() {
-    var radioswiss = document.getElementsByName('swiss_radio');
-    var radioeuro = document.getElementsByName('euro_radio');
+    let radio_euro_swiss = document.getElementsByName('swiss_euro_radio');
 
-    if(radioswiss[0].checked){
-        for(let c=1; c<=number_of_swiss_plates; c++){
-            document.getElementById("plate" + c).style.display = 'block';
+    if(radio_euro_swiss[0].checked){
+        for(let c=1; c<=number_of_plates; c++){
+            if(c<=4){
+                document.getElementById("plate" + c).style.display = 'block';
+            } else {
+                document.getElementById("plate" + c).style.display = 'none';
+            }
         }
     }
-    if(radioswiss[1].checked){
-        document.getElementById("plate1").style.display = 'block';
-        document.getElementById("plate2").style.display = 'block';
-        document.getElementById("plate3").style.display = 'none';
-        document.getElementById("plate4").style.display = 'none';
+    if(radio_euro_swiss[1].checked){
+        for(let c=1; c<=number_of_plates; c++){
+            if(c === 1 || c === 2){
+                document.getElementById("plate" + c).style.display = 'block';
+            } else {
+                document.getElementById("plate" + c).style.display = 'none';
+            }
+        }
     }
-    if(radioswiss[2].checked){
-        document.getElementById("plate1").style.display = 'none';
-        document.getElementById("plate2").style.display = 'none';
-        document.getElementById("plate3").style.display = 'block';
-        document.getElementById("plate4").style.display = 'block';
+    if(radio_euro_swiss[2].checked){
+        for(let c=1; c<=number_of_plates; c++) {
+            if (c === 3 || c === 4) {
+                document.getElementById("plate" + c).style.display = 'block';
+            } else {
+                document.getElementById("plate" + c).style.display = 'none';
+            }
+        }
     }
-
-    if(radioeuro[0].checked){
-        //TODO
+    if(radio_euro_swiss[3].checked){
+        for(let c=1; c<=number_of_plates; c++){
+            if(c>4){
+                document.getElementById("plate" + c).style.display = 'block';
+            } else {
+                document.getElementById("plate" + c).style.display = 'none';
+            }
+        }
     }
-
+    if(radio_euro_swiss[4].checked){
+        for(let c=1; c<=number_of_plates; c++) {
+            if (c === 5 || c === 6) {
+                document.getElementById("plate" + c).style.display = 'block';
+            } else {
+                document.getElementById("plate" + c).style.display = 'none';
+            }
+        }
+    }
+    if(radio_euro_swiss[5].checked){
+        for(let c=1; c<=number_of_plates; c++) {
+            if (c === 7 || c === 8) {
+                document.getElementById("plate" + c).style.display = 'block';
+            } else {
+                document.getElementById("plate" + c).style.display = 'none';
+            }
+        }
+    }
 }

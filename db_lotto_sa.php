@@ -69,7 +69,7 @@ while($row = mysqli_fetch_array($result_sa, MYSQLI_NUM)) {
 	echo "<input type='hidden' name='id' value='$row[0]'>";
 	echo "<td><input type='submit' name='delete' value='x' style='background: #DB5353; border-width: 0; color: white;'></td>";
 	echo "</form>";
-	echo "<td style='width:80px; font-size:14px; font-family:Arial;background: white; color: #1a2c3f;' onmouseover='shownumbers_sa($row[0]);' onmouseout='mouseoutfunc_sa();'>" . $da . "</td>";
+	echo "<td id='$row[0]_sa_date' style='width:80px; font-size:14px; font-family:Arial;background: white; color: #1a2c3f;' onmouseover='shownumbers_sa($row[0]);' onmouseout='mouseoutfunc_sa($row[0]);'>" . $da . "</td>";
 	for ( $ll = 1; $ll <= 42; $ll++ ) {
 		$background = "white";
 		$color = "#1a2c3f";
@@ -94,6 +94,7 @@ mysqli_close($db);
 ?>
 <script>
 	function shownumbers_sa(num_id){
+	    document.getElementById(num_id + '_sa_date').style.background='#DB5353';
         var table = document.getElementById("sa_table");
         for (let r of table.rows) {
             if(Number(r.id) === Number(num_id)){
@@ -109,7 +110,8 @@ mysqli_close($db);
         }
 	}
 
-	function mouseoutfunc_sa(){
+	function mouseoutfunc_sa(num_id){
+	    document.getElementById(num_id + '_sa_date').style.background='white';
 	    for(let c=1; c<=42; c++){
             document.getElementById("sa" + c).style.backgroundColor = "white";
             document.getElementById("sa" + c).style.color = "black";

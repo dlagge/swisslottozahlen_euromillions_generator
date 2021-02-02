@@ -14,7 +14,7 @@ h1 { font-size: 60px;}
 
 *:focus { outline: 0 !important;}
 
-button { cursor:pointer;}
+button, input { cursor:pointer;}
 
 .footer {
     padding: 5px;
@@ -25,11 +25,21 @@ button { cursor:pointer;}
 
 .plate {
     background: #1979a9;
-    padding: 20px;
-    margin: 0 auto 40px;
+    padding: 5px;
+    margin: 0 auto 20px;
     -webkit-box-shadow: 5px 5px 9px -1px #1a2c3f;
     box-shadow: 5px 5px 9px -1px #1a2c3f;
     max-width: 1000px;
+}
+
+.pic {
+    width: 100px;
+    margin-left: 10px;
+}
+
+
+#swiss_settings, #euro_settings, #plate0 {
+    display:none;
 }
 
 #wrapper1 {
@@ -41,7 +51,7 @@ button { cursor:pointer;}
 #swiss_euro_settings {
     margin: 0 auto 20px;
     max-width: 1000px;
-    padding: 20px;
+    padding: 5px;
 }
 
 fieldset { border-width: 0;}
@@ -63,10 +73,7 @@ fieldset { border-width: 0;}
     grid-column: 7;
 }
 
-#zahl8 {
-    grid-column: 8;
-    display: none;
-}
+#zahl8 { grid-column: 8;}
 
 #box7, #box8 { background: yellow;}
 
@@ -93,9 +100,9 @@ fieldset { border-width: 0;}
 
 #glueck_mi { margin-top: 20px;}
 
-#wrap3, #wrap1 {
+#wrap {
     display: grid;
-    grid-template-columns:repeat(2, 1fr);
+    grid-template-columns:2fr 1fr;
     margin-bottom: -20px;
 }
 
@@ -110,15 +117,16 @@ fieldset { border-width: 0;}
 /* ------------------ buttons ------------------ */
 
 #swiss_euro_buttons {
-    transform: scale(0.5);
+    transform: scale(0.8);
     transform-origin: left;
+    margin-bottom: -20px;
 }
 
 #swiss { margin-right: 40px;}
 
 #euromill { margin-top: 20px;}
 
-#the_big_button_swiss, #the_big_button_euro {
+.the_big_button {
     background: white;
     border: #DB5353 solid 10px;
     padding: 5px;
@@ -129,11 +137,11 @@ fieldset { border-width: 0;}
     margin: 0 auto 10px;
 }
 
-#the_big_button_swiss:hover, #the_big_button_euro:hover, #euromill:hover, #swiss:hover {
+.the_big_button:hover, .swiss_euro:hover {
     transform: scale(1.05);
 }
 
-#eintragen_mi, #eintragen_sa {
+.eintragen {
     background: white;
     border: #DB5353 solid 10px;
     padding: 10px;
@@ -144,14 +152,21 @@ fieldset { border-width: 0;}
     margin-bottom: 40px;
 }
 
-#eintragen_mi:hover, #eintragen_sa:hover {
+.eintragen:hover {
     transform: scale(1.05);
 }
 
-#Glueckszahl {
-    margin-left: 20px;
+.Glueckszahl {
     margin-right: 20px;
     background: yellow;
+}
+
+#glueck1 {
+    margin-right: 0px;
+}
+
+#Lottozahl6_sa, #Lottozahl6_mi, #Lottozahl6_di {
+    margin-right: 20px;
 }
 
 .Lottozahl{
@@ -171,17 +186,15 @@ fieldset { border-width: 0;}
 /* ------------------ @media ------------------ */
 
 @media (max-width: 800px) {
-    #the_big_button_swiss, #the_big_button_euro {
-        transform: scale(0.6);
+    .the_big_button {
+        transform: scale(0.7);
     }
-
-    #the_big_button_swiss:hover, #the_big_button_euro:hover {
-        transform: scale(0.61);
+    .the_big_button:hover {
+        transform: scale(0.71);
     }
     .box {
         font-size: 35px;
     }
-
     h1 {
         font-size: 30px;
     }
@@ -191,11 +204,6 @@ fieldset { border-width: 0;}
     #wrapper2 {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    #plate0 {
-        max-width: 1000px;
-        margin: 0 auto 40px;
     }
 
     #plate1 {
@@ -219,6 +227,30 @@ fieldset { border-width: 0;}
     #plate4 {
         grid-column: 2;
         grid-row: 2;
+        margin-left: 10px;
+    }
+
+    #plate5 {
+        grid-column: 1;
+        grid-row: 3;
+        margin-left: -5px;
+    }
+
+    #plate6 {
+        grid-column: 2;
+        grid-row: 3;
+        margin-left: 10px;
+    }
+
+    #plate7 {
+        grid-column: 1;
+        grid-row: 4;
+        margin-left: -5px;
+    }
+
+    #plate8 {
+        grid-column: 2;
+        grid-row: 4;
         margin-left: 10px;
     }
 }

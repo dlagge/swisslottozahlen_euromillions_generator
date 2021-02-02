@@ -70,7 +70,7 @@ while($row = mysqli_fetch_array($result_mi, MYSQLI_NUM)){
 	echo "<input type='hidden' name='id' value='$row[0]'>";
 	echo "<td><input type='submit' name='delete' value='x' style='background: #DB5353; border-width: 0; color: white;'></td>";
 	echo "</form>";
-	echo "<td style='width:80px; font-size:14px; font-family:Arial;background: white; color: #1a2c3f;' onmouseover='shownumbers_mi($row[0]);' onmouseout='mouseoutfunc_mi();'>". $da ."</td>";
+	echo "<td id='$row[0]_mi_date' style='width:80px; font-size:14px; font-family:Arial;background: white; color: #1a2c3f;}' onmouseover='shownumbers_mi($row[0]);' onmouseout='mouseoutfunc_mi($row[0]);'>". $da ."</td>";
 	for($ll=1; $ll <= 42; $ll++){
 		$background = "white";
 		$color = "#1a2c3f";
@@ -90,11 +90,11 @@ while($row = mysqli_fetch_array($result_mi, MYSQLI_NUM)){
 }
 
 echo "</table>";
-
 mysqli_close($db);
 ?>
 <script>
     function shownumbers_mi(num_id){
+        document.getElementById(num_id + '_mi_date').style.background='#DB5353';
         var table = document.getElementById("mi_table");
         for (let r of table.rows) {
             if(Number(r.id) === Number(num_id)){
@@ -110,7 +110,8 @@ mysqli_close($db);
         }
     }
 
-    function mouseoutfunc_mi(){
+    function mouseoutfunc_mi(num_id){
+        document.getElementById(num_id + '_mi_date').style.background='white';
         for(let c=1; c<=42; c++){
             document.getElementById("mi" + c).style.backgroundColor = "white";
             document.getElementById("mi" + c).style.color = "black";
