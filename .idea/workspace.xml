@@ -20,22 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd725fb8-5e52-4779-a36b-7488cf9370ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/db_lotto_di.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_lotto_fr.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ziehungsstatistik_di.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ziehungsstatistik_fr.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db_lotto_di_fr.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db_lotto_mi_sa.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ziehungsstatistik_di_fr.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ziehungsstatistik_mi_sa.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_lotto_mi.php" beforeDir="false" afterPath="$PROJECT_DIR$/db_lotto_mi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_lotto_sa.php" beforeDir="false" afterPath="$PROJECT_DIR$/db_lotto_sa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/euromillions_button.png" beforeDir="false" afterPath="$PROJECT_DIR$/euromillions_button.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/db_connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_lotto_di.php" beforeDir="false" afterPath="$PROJECT_DIR$/db_lotto_di.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_lotto_fr.php" beforeDir="false" afterPath="$PROJECT_DIR$/db_lotto_fr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/di_glueck.json" beforeDir="false" afterPath="$PROJECT_DIR$/di_glueck.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/di_tab.json" beforeDir="false" afterPath="$PROJECT_DIR$/di_tab.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr_glueck.json" beforeDir="false" afterPath="$PROJECT_DIR$/fr_glueck.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fr_tab.json" beforeDir="false" afterPath="$PROJECT_DIR$/fr_tab.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mi_glueck.json" beforeDir="false" afterPath="$PROJECT_DIR$/mi_glueck.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mi_tab.json" beforeDir="false" afterPath="$PROJECT_DIR$/mi_tab.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/random_generator.js" beforeDir="false" afterPath="$PROJECT_DIR$/random_generator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sa_glueck.json" beforeDir="false" afterPath="$PROJECT_DIR$/sa_glueck.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sa_tab.json" beforeDir="false" afterPath="$PROJECT_DIR$/sa_tab.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swisslotto_button.png" beforeDir="false" afterPath="$PROJECT_DIR$/swisslotto_button.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ziehungsstatistik_di.php" beforeDir="false" afterPath="$PROJECT_DIR$/ziehungsstatistik_di.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ziehungsstatistik_fr.php" beforeDir="false" afterPath="$PROJECT_DIR$/ziehungsstatistik_fr.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +64,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -79,17 +81,17 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\MAMP\htdocs\swisslottozahlen_euromillions_generator" />
-      <recent name="C:\MAMP\htdocs\lottozahlen_generator" />
-      <recent name="C:\Users\Dominique\PhpstormProjects\lottozahlen_generator" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\MAMP\htdocs\swisslottozahlen_euromillions_generator" />
       <recent name="C:\MAMP\htdocs\lottozahlen_generator" />
       <recent name="C:\Users\Dominique\PhpstormProjects\lottozahlen_generator" />
       <recent name="C:\Users\Dominique\PhpstormProjects\lottozahlen_generator\lib" />
       <recent name="C:\Users\Dominique\PhpstormProjects\lottozahlen_generator\data" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\MAMP\htdocs\swisslottozahlen_euromillions_generator" />
+      <recent name="C:\MAMP\htdocs\lottozahlen_generator" />
+      <recent name="C:\Users\Dominique\PhpstormProjects\lottozahlen_generator" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -136,7 +138,13 @@
       <workItem from="1602584438214" duration="13896000" />
       <workItem from="1605722732892" duration="142000" />
       <workItem from="1612108947803" duration="21053000" />
-      <workItem from="1612182464147" duration="32228000" />
+      <workItem from="1612182464147" duration="32550000" />
+      <workItem from="1612228906461" duration="633000" />
+      <workItem from="1612262922059" duration="587000" />
+      <workItem from="1612283354267" duration="6140000" />
+      <workItem from="1612699138892" duration="7012000" />
+      <workItem from="1612802130133" duration="5113000" />
+      <workItem from="1612879909428" duration="3898000" />
     </task>
     <servers />
   </component>

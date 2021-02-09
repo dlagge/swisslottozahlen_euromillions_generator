@@ -16,11 +16,10 @@ if(isset($_POST['submit_di'])){
 	$Lottozahl3 = $_POST['Lottozahl3_di'];
 	$Lottozahl4 = $_POST['Lottozahl4_di'];
 	$Lottozahl5 = $_POST['Lottozahl5_di'];
-	$Lottozahl6 = $_POST['Lottozahl6_di'];
 	$Glueckszahl1 = $_POST['Glueckszahl1_di'];
 	$Glueckszahl2 = $_POST['Glueckszahl2_di'];
 
-	$Lottozahl_arr = array($Datum, $Lottozahl1, $Lottozahl2, $Lottozahl3, $Lottozahl4, $Lottozahl5, $Lottozahl6, $Glueckszahl1, $Glueckszahl2);
+	$Lottozahl_arr = array($Datum, $Lottozahl1, $Lottozahl2, $Lottozahl3, $Lottozahl4, $Lottozahl5, $Glueckszahl1, $Glueckszahl2);
 
 	$db_control_di = true;
 
@@ -40,7 +39,7 @@ if(isset($_POST['submit_di'])){
 	array_pop($Lottozahl_arr);
 	array_shift($Lottozahl_arr);
 
-	if(sizeof(array_unique($Lottozahl_arr))!== 6){
+	if(sizeof(array_unique($Lottozahl_arr))!== 5){
 		$db_control_di = false;
 		echo "<script type='text/javascript'>alert('Es gab doppelte Werte oder mindestens 2 Felder ohne Wert');</script>";
 	}
@@ -58,8 +57,8 @@ if(isset($_POST['submit_di'])){
 
 
 	if($db_control_di === true){
-		$sql = "INSERT INTO euromillionszahlentabelle (Datum, Lottozahl1, Lottozahl2, Lottozahl3, Lottozahl4, Lottozahl5, Lottozahl6, Glueckszahl1, Glueckszahl2, Ziehung)
-	VALUES ('$Datum','$Lottozahl1', '$Lottozahl2', '$Lottozahl3', '$Lottozahl4', '$Lottozahl5', '$Lottozahl6', '$Glueckszahl1', '$Glueckszahl2', 'Dienstag')";
+		$sql = "INSERT INTO euromillionszahlentabelle (Datum, Lottozahl1, Lottozahl2, Lottozahl3, Lottozahl4, Lottozahl5, Glueckszahl1, Glueckszahl2, Ziehung)
+	VALUES ('$Datum','$Lottozahl1', '$Lottozahl2', '$Lottozahl3', '$Lottozahl4', '$Lottozahl5', '$Glueckszahl1', '$Glueckszahl2', 'Dienstag')";
 		mysqli_query($db, $sql);
 	}
 }
@@ -81,16 +80,16 @@ while($row = mysqli_fetch_array($result_di, MYSQLI_NUM)){
 		$background = "white";
 		$color = "#1a2c3f";
 		$fontWeight = "";
-		for($lll=2; $lll<8; $lll++){
+		for($lll=2; $lll<7; $lll++){
 			if($row[$lll] === strval($ll)){
 				$background = "#1979a9";
 			}
 		}
-		if($row[8] === strval($ll)){
+		if($row[7] === strval($ll)){
 			$color = "#DB5353";
 			$fontWeight = "bold";
 		}
-		if($row[9] === strval($ll)){
+		if($row[8] === strval($ll)){
         		$color = "#DB5353";
         		$fontWeight = "bold";
         }

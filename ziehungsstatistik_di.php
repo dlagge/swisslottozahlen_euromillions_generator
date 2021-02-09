@@ -2,7 +2,7 @@
 
 include('db_connection.php');
 
-$all_sql = "SELECT Lottozahl1, Lottozahl2, Lottozahl3, Lottozahl4, Lottozahl5, Lottozahl6, Glueckszahl1, Glueckszahl2 FROM euromillionszahlentabelle WHERE Ziehung = 'Dienstag'";
+$all_sql = "SELECT Lottozahl1, Lottozahl2, Lottozahl3, Lottozahl4, Lottozahl5, Glueckszahl1, Glueckszahl2 FROM euromillionszahlentabelle WHERE Ziehung = 'Dienstag'";
 
 $result_zh_di = mysqli_query( $db, $all_sql);
 $response_di = array();
@@ -17,11 +17,10 @@ while ( $row = mysqli_fetch_array( $result_zh_di, MYSQLI_NUM ) ) {
 	$Lottozahl3 = $row[2];
 	$Lottozahl4 = $row[3];
 	$Lottozahl5 = $row[4];
-	$Lottozahl6 = $row[5];
-	$Glueckszahl1 = $row[6];
-	$Glueckszahl2 = $row[7];
+	$Glueckszahl1 = $row[5];
+	$Glueckszahl2 = $row[6];
 
-	$posts_di[] = array( 'Lottozahl1' => $Lottozahl1, 'Lottozahl2' => $Lottozahl2, 'Lottozahl3' => $Lottozahl3, 'Lottozahl4' => $Lottozahl4, 'Lottozahl5' => $Lottozahl5, 'Lottozahl6' => $Lottozahl6);
+	$posts_di[] = array( 'Lottozahl1' => $Lottozahl1, 'Lottozahl2' => $Lottozahl2, 'Lottozahl3' => $Lottozahl3, 'Lottozahl4' => $Lottozahl4, 'Lottozahl5' => $Lottozahl5);
     $glueck_di[] = array('Glueckszahl1' => $Glueckszahl1, 'Glueckszahl2' => $Glueckszahl2);
 }
 $response_di['posts_di'] = $posts_di;
@@ -86,12 +85,11 @@ mysqli_close( $db );
             d.Lottozahl3 = +d.Lottozahl3;
             d.Lottozahl4 = +d.Lottozahl4;
             d.Lottozahl5 = +d.Lottozahl5;
-            d.Lottozahl6 = +d.Lottozahl6;
         });
 
         di_arr = [];
         for (let di = 0; di < data.length; di++) {
-            di_arr.push(data[di].Lottozahl1, data[di].Lottozahl2, data[di].Lottozahl3, data[di].Lottozahl4, data[di].Lottozahl5, data[di].Lottozahl6);
+            di_arr.push(data[di].Lottozahl1, data[di].Lottozahl2, data[di].Lottozahl3, data[di].Lottozahl4, data[di].Lottozahl5);
         }
 
         count_di = [];

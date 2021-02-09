@@ -1,11 +1,10 @@
 let lottozahl_max_swiss = 42;
 let lottozahl_max_euro = 50;
 let glueckzahl_min = 1;
-let anzahl_lottozahlen = 6;
 let random_arr = [];
-let number_of_plates = 8;
+let number_of_plates = 12;
 
-function create_lottonumbers(glueckzahl_max, lottozahl_max) {
+function create_lottonumbers(glueckzahl_max, lottozahl_max, anzahl_lottozahlen) {
     let arr = [];
 
     if (random_arr.length >= anzahl_lottozahlen) {
@@ -179,6 +178,7 @@ function show_swisslotto() {
     document.getElementById("swiss_settings").style.display = 'block';
     document.getElementById("euro_settings").style.display = 'none';
     document.getElementById("zahl8").style.display = 'none';
+    document.getElementById("zahl6").style.display = 'block';
     document.getElementById("the_big_button_euro").style.display = 'none';
     document.getElementById("the_big_button_swiss").style.display = 'block';
     document.getElementById("swiss_selector").style.display = 'block';
@@ -186,7 +186,6 @@ function show_swisslotto() {
     random_arr = [];
     create_buttons(lottozahl_max_swiss);
     select_all_buttons(42);
-
 }
 
 function show_euromillions() {
@@ -196,6 +195,7 @@ function show_euromillions() {
     document.getElementById("swiss_settings").style.display = 'none';
     document.getElementById("euro_settings").style.display = 'block';
     document.getElementById("zahl8").style.display = 'block';
+    document.getElementById("zahl6").style.display = 'none';
     document.getElementById("the_big_button_euro").style.display = 'block';
     document.getElementById("the_big_button_swiss").style.display = 'none';
     document.getElementById("swiss_selector").style.display = 'none';
@@ -210,7 +210,7 @@ function display() {
 
     if(radio_euro_swiss[0].checked){
         for(let c=1; c<=number_of_plates; c++){
-            if(c<=4){
+            if(c === 9 || c === 10){
                 document.getElementById("plate" + c).style.display = 'block';
             } else {
                 document.getElementById("plate" + c).style.display = 'none';
@@ -237,7 +237,7 @@ function display() {
     }
     if(radio_euro_swiss[3].checked){
         for(let c=1; c<=number_of_plates; c++){
-            if(c>4){
+            if(c === 11 || c === 12){
                 document.getElementById("plate" + c).style.display = 'block';
             } else {
                 document.getElementById("plate" + c).style.display = 'none';

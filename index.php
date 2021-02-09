@@ -33,8 +33,8 @@
     </form>
 </div>
 <div class="plate" id="plate0">
-    <button class="the_big_button" id="the_big_button_swiss" onclick="create_lottonumbers(6, 42);">Lottozahlen generieren</button>
-    <button class="the_big_button" id="the_big_button_euro" onclick="create_lottonumbers(12, 50);">Lottozahlen generieren</button>
+    <button class="the_big_button" id="the_big_button_swiss" onclick="create_lottonumbers(6, 42, 6);">Lottozahlen generieren</button>
+    <button class="the_big_button" id="the_big_button_euro" onclick="create_lottonumbers(12, 50, 5);">Lottozahlen generieren</button>
     <div id="swiss_selector">
         <input type="radio" name="numsel_swiss" onclick="select_all_buttons(42);"><label>Alle Zahlen selektieren</label><br>
         <input type="radio" name="numsel_swiss" onclick="deselect_all_buttons(42);"><label>Alle Zahlen deselektieren</label>
@@ -164,7 +164,6 @@
                             <input type="number" class="Lottozahl" name="Lottozahl3_di" min="1" max="50">
                             <input type="number" class="Lottozahl" name="Lottozahl4_di" min="1" max="50">
                             <input type="number" class="Lottozahl" name="Lottozahl5_di" min="1" max="50">
-                            <input type="number" class="Lottozahl" id="Lottozahl6_di" name="Lottozahl6_di" min="1" max="50">
                             <input type="number" class="Lottozahl Glueckszahl" id="glueck1" name="Glueckszahl1_di" min="1" max="12">
                             <input type="number" class="Lottozahl Glueckszahl" name="Glueckszahl2_di" min="1" max="12">
                             <input type="date" id="datepicker" name="Datum_di" step=7 min=2010-01-05>
@@ -211,7 +210,6 @@
                                 <input type="number" class="Lottozahl" name="Lottozahl3_fr" min="1" max="50">
                                 <input type="number" class="Lottozahl" name="Lottozahl4_fr" min="1" max="50">
                                 <input type="number" class="Lottozahl" name="Lottozahl5_fr" min="1" max="50">
-                                <input type="number" class="Lottozahl" id="Lottozahl6_fr" name="Lottozahl6_fr" min="1" max="50">
                                 <input type="number" class="Lottozahl Glueckszahl" id="glueck1" name="Glueckszahl1_fr" min="1" max="12">
                                 <input type="number" class="Lottozahl Glueckszahl" name="Glueckszahl2_fr" min="1" max="12">
                                 <input type="date" id="datepicker" name="Datum_fr" step=7 min=2010-01-01>
@@ -244,6 +242,60 @@
         			<?php require_once("ziehungsstatistik_fr.php"); ?>
                 </div>
         </div>
+
+
+        <div class="plate" id="plate9">
+            <div class="ziehungen" id="ziehung_mittwoch_samstag">Ziehung Mittwoch und Samstag
+                <img src="swisslotto_button.png" class="pic">
+            </div>
+            <div id="db_mi_sa">
+                <div id="autoscroll">
+        		    <?php require_once("db_lotto_mi_sa.php") ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="plate" id="plate10">
+            <div class="ziehungen" id="ziehung_mittwoch_samstag_h">Ziehungshäufigkeit Mittwoch und Samstag
+                <img src="swisslotto_button.png" class="pic">
+            </div>
+            <div id="zi_mi_sa">
+                <div id="autoscroll">
+                    <div id="mi_sa_datab"></div>
+                </div>
+                <div id="autoscroll">
+                    <div id="mi_sa_datab_g"></div>
+                </div>
+        		<?php require_once("ziehungsstatistik_mi_sa.php"); ?>
+            </div>
+        </div>
+
+        <div class="plate" id="plate11">
+            <div class="ziehungen" id="ziehung_dienstag_freitag">Ziehung Dienstag und Freitag
+                <img src="euromillions_button.png" class="pic">
+            </div>
+            <div id="db_di_fr">
+                <div id="autoscroll">
+        		    <?php require_once("db_lotto_di_fr.php") ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="plate" id="plate12">
+            <div class="ziehungen" id="ziehung_dienstag_freitag_h">Ziehungshäufigkeit Dienstag und Freitag
+                <img src="euromillions_button.png" class="pic">
+            </div>
+            <div id="zi_di_fr">
+                <div id="autoscroll">
+                    <div id="di_fr_datab"></div>
+                </div>
+                <div id="autoscroll">
+                    <div id="di_fr_datab_g"></div>
+                </div>
+        		<?php require_once("ziehungsstatistik_di_fr.php"); ?>
+            </div>
+        </div>
+
 
 </div>
 
